@@ -18,7 +18,7 @@ Clone the repository:
 ```bash
 git clone https://github.com/joeezg/Design-Optimisation-Project.git
 cd simplex-optimisation
-python simplex_optimization.py
+python simplex_optimisation.py
 ```
 
 ###

@@ -23,7 +23,8 @@ python simplex_optimisation.py
 
 ###
 This code is designed to fully stop if there's an error within the subfunctions to ensure accuracy in the output
-Unit tests (e.g. convergence function is tested  was conducted on the convergence function to ensure 
+
+A unit test with 2 successes and 1 failure was conducted on the convergence function
 
 ###
 Seperate functions were created to separate the methods used for each algorithm step. This improves the clarity of the code despite any redundancies created.

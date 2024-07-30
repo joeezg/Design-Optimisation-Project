@@ -1,8 +1,7 @@
 # Simplex Optimisation Algorithm
 
-This repository contains a Python implementation of the
-Simplex Optimisation Algorithm. The algorithm iteratively 
-refines a simplex to find the minimum of a given function.
+This repository contains a Python implementation of the Nelder Mead Simplex Algorithm. This iteratively refines a simplex to appropimate the minimum of a given equation (function, f).
+Applications: for example, determining what components of bernoulli's principle applied to a flow problem would minimise total energy loss
 
 ### Prerequisites
 

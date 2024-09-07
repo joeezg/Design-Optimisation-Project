@@ -155,7 +155,6 @@ def shrinking(xL, xT, xH, p):
     return xT, xH
 
 # Main Function
-
 def simplex_optimization(f, x0, tol=0.001, alpha=1.0, beta=0.5, gamma=2.0, p=0.5, c = 2.0, n = 2.0):
      """
     Perform the Nelder-Mead Simplex optimization on a given objective function.

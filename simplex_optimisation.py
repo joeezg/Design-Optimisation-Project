@@ -35,7 +35,7 @@ def ev(xL, xH, xT, f):
     xT = x_values[sorted_indices[1]]
     xH = x_values[sorted_indices[2]]
     
-    return xL, xT, xH
+    return xL, xH, xT
     
 # Function to perform reflection
 def reflection(xL, xT, xH, alpha, n):

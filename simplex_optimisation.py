@@ -3,28 +3,40 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Function to evaluate the function values and sort points
-def ev(x1, x2, x0, f):
-    """
-    Evaluate the function values at three points and return the points sorted by function values.
-    
-    Args:
-        x1 (numpy.ndarray): First point in the simplex.
-        x2 (numpy.ndarray): Second point in the simplex.
-        x0 (numpy.ndarray): Third point in the simplex (usually the initial guess).
-        f (function): The objective function to evaluate.
-    
-    Returns:
-        tuple: Points sorted by function values in ascending order.
-    """
-    fx = np.array([f(x0), f(x1), f(x2)])
-    sorted_indices = np.argsort(fx)
-    if sorted_indices[0] == 0:
-        return x0, x1, x2
-    elif sorted_indices[1] == 1:
-        return x1, x0, x2
-    else:
-        return x2, x1, x0
+import numpy as np
 
+def ev(xL, xH, xT, f):
+    """
+    Evaluate the function at three points and return them in sorted order 
+    based on the function values.
+
+    Args:
+        xL: First point (could be the point with the lowest function value).
+        xH: Second point (could be the point with the highest function value).
+        xT: Third point (could be the second-highest point).
+        f: The objective function to be minimized.
+
+    Returns:
+        tuple: A tuple containing three points (xL, xT, xH) sorted by their 
+               function values, where:
+               - xL: point with the lowest function value,
+               - xT: point with the second-highest function value,
+               - xH: point with the highest function value.
+    """
+    # Calculate the function values for the three points
+    f_values = np.array([f(xL), f(xT), f(xH)])
+    x_values = np.array([xL, xT, xH])
+    
+    # Sort the function values and reorder the corresponding points
+    sorted_indices = np.argsort(f_values)
+    
+    # Reassign xL, xT, and xH based on sorted function values
+    xL = x_values[sorted_indices[0]]
+    xT = x_values[sorted_indices[1]]
+    xH = x_values[sorted_indices[2]]
+    
+    return xL, xT, xH
+    
 # Function to perform reflection
 def reflection(xL, xT, xH, alpha, n):
     """
